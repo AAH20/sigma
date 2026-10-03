@@ -15,6 +15,7 @@ on:
 jobs:
   test-sigma:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.8
@@ -35,6 +36,7 @@ jobs:
         pipenv run make test-backend-sql
   yamllint:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
     - uses: actions/checkout@v2
     - name: yaml-lint
